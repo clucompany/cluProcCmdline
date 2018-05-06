@@ -104,3 +104,8 @@ Machine: Intel Core 2 Duo (2000 MHz), 2 Gb DDR2
 	test tests::bench_oneslice_new ... bench:         101 ns/iter (+/- 14)
 	test tests::bench_slice_new    ... bench:         105 ns/iter (+/- 23)
 
+# License
+
+Copyright 2018 #UlinProject Денис Котляров
+
+Licensed under the Apache License, Version 2.0
