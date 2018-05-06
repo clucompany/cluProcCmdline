@@ -1,5 +1,10 @@
 # cluProcCmdline
 
+[![Build Status](https://travis-ci.org/clucompany/cluProcCmdline.svg?branch=master)](https://travis-ci.org/clucompany/cluProcCmdline)
+[![Apache licensed](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
+[![crates.io](http://meritbadge.herokuapp.com/cluproccmdline)](https://crates.io/crates/cluproccmdline)
+[![Documentation](https://docs.rs/cluuname/badge.svg)](https://docs.rs/cluproccmdline)
+
 Fast secure parsing /proc/cmdline.
 
 
