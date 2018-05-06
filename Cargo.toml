@@ -6,7 +6,7 @@ repository = "https://github.com/clucompany/cluProcCmdline.git"
 license = "Apache-2.0"
 readme = "README.md"
 
-description = "Fast secure parsing proc cmdline."
+description = "Fast secure parsing /proc/cmdline."
 keywords = ["proc", "/proc/cmdline", "cmdline", "cluproc", "cluproccmdline", "clucompany"]
 categories = ["development-tools::ffi"]
 
