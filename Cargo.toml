@@ -1,0 +1,18 @@
+[package]
+name = "cluproccmdline"
+version = "0.1.1"
+authors = ["Денис Котляров <#Ulin Project 18, denis2005991@gmail.com>"]
+repository = "https://github.com/clucompany/cluProcCmdline.git"
+license = "Apache-2.0"
+readme = "README.md"
+
+description = "Fast secure parsing /proc/cmdline."
+keywords = ["proc", "/proc/cmdline", "cmdline", "cluproc", "cluproccmdline", "clucompany"]
+categories = ["development-tools::ffi"]
+
+
+[lib]
+name = "cluproccmdline"
+crate-type = ["dylib", "rlib"]
+
+[dependencies]
