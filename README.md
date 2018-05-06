@@ -5,7 +5,7 @@
 [![crates.io](http://meritbadge.herokuapp.com/cluproccmdline)](https://crates.io/crates/cluproccmdline)
 [![Documentation](https://docs.rs/cluuname/badge.svg)](https://docs.rs/cluproccmdline)
 
-Fast secure parsing /proc/cmdline.
+Fast secure parsing "/proc/cmdline".
 
 
 # Use DefaultIter:
