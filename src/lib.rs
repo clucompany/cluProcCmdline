@@ -14,7 +14,7 @@
 
 
 /*!
-Fast secure parsing /proc/cmdline".
+Fast secure parsing proc cmdline".
 
 # Use:
 
