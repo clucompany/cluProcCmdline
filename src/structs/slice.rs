@@ -1,5 +1,5 @@
 
-use std::ops::Deref;
+//use std::ops::Deref;
 use structs::buf::CmdlineBuf;
 use iter::one::CmdlineOneIter;
 use iter::two::CmdlineTwoIter;

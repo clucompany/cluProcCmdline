@@ -108,6 +108,17 @@ let mut cmdline = cluproccmdline::array_slice(b"test=all rw");
 assert_eq!(cmdline.cmdline_hash(), 1877887864476248772);
 ```
 
+
+
+# Benchmark
+
+Machine: Intel Core 2 Duo (2000 MHz), 2 Gb DDR2
+
+```
+test tests::bench_oneslice_new ... bench:         101 ns/iter (+/- 14)
+test tests::bench_slice_new    ... bench:         105 ns/iter (+/- 23)
+```
+
 */
 
 
@@ -127,7 +138,7 @@ pub mod iter;
 use std::path::Path;
 use std::fs::File;
 use std::io::Read;
-use std::ops::Deref;
+//use std::ops::Deref;
 use std::fmt::Debug;
 
 use structs::slice::CmdlineSlice;
