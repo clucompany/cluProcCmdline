@@ -114,7 +114,7 @@ assert_eq!(cmdline.cmdline_hash(), 1877887864476248772);
 
 Machine: Intel Core 2 Duo (2000 MHz), 2 Gb DDR2
 
-```
+```none
 test tests::bench_oneslice_new ... bench:         101 ns/iter (+/- 14)
 test tests::bench_slice_new    ... bench:         105 ns/iter (+/- 23)
 ```
