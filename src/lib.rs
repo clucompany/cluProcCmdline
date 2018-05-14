@@ -270,12 +270,12 @@ pub trait Cmdline: /* Deref<Target = [u8]> + */ AsRef<[u8]> + Hash + Debug + Clo
 ///}	
 ///```
 #[inline]
-pub fn this_machine() -> Result<CmdlineBuf, CmdlineErr> {
+pub fn this_machine() -> Result<impl Cmdline, CmdlineErr> {
 	open_file("/proc/cmdline")
 }
 
 ///Opens the cmdline from the file.
-pub fn open_file<P: AsRef<Path> >(path: P) -> Result<CmdlineBuf, CmdlineErr> {
+pub fn open_file<P: AsRef<Path> >(path: P) -> Result<impl Cmdline, CmdlineErr> {
 	match File::open(path) {
 		Ok(mut file) => {
 			let mut vec = Vec::with_capacity(226);
@@ -299,13 +299,13 @@ pub fn open_file<P: AsRef<Path> >(path: P) -> Result<CmdlineBuf, CmdlineErr> {
 
 ///Creates cmdline from `Vec`. Equivalent `CmdlineBuf::array(array)`.
 #[inline]
-pub fn array_buf(array: Vec<u8>) -> CmdlineBuf {
+pub fn array_buf(array: Vec<u8>) -> impl Cmdline {
 	CmdlineBuf::array(array)
 }
 
 ///Creates cmdline from `&[u8]`. Equivalent `CmdlineSlice::array(array)`.
 #[inline]
-pub fn array_slice<'a>(array: &'a [u8]) -> CmdlineSlice<'a> {
+pub fn array_slice<'a>(array: &'a [u8]) -> impl Cmdline + 'a {
 	CmdlineSlice::array(array)
 }	
 
