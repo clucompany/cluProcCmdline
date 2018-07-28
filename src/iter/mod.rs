@@ -16,8 +16,8 @@ pub struct CmdlineIter<'i> {
 
 impl<'i> CmdlineIter<'i> {
 	#[inline]
-	pub fn new(array: &'i [u8]) -> CmdlineIter<'i> {
-		CmdlineIter {
+	pub fn new(array: &'i [u8]) -> Self {
+		Self {
 			array: array,
 			iter: array.iter(),
 			

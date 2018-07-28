@@ -15,8 +15,8 @@ pub struct CmdlineTwoIter<'i> {
 
 impl<'i> CmdlineTwoIter<'i> {
 	#[inline]
-	pub fn new(array: &'i [u8]) -> CmdlineTwoIter<'i> {
-		CmdlineTwoIter {
+	pub fn new(array: &'i [u8]) -> Self {
+		Self {
 			array: array,
 			iter: array.iter(),
 			

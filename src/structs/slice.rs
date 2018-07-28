@@ -8,39 +8,35 @@ use Cmdline;
 
 
 #[derive(Debug, Hash, Clone, Eq, PartialEq, PartialOrd)]
-pub struct CmdlineSlice<'a> {
-	array: &'a [u8],
-}
+pub struct CmdlineSlice<'a>(&'a [u8]);
 
 impl<'a> CmdlineSlice<'a> {
 	///Creates cmdline from `&[u8]`.
 	#[inline]
-	pub fn array(array: &'a [u8]) -> CmdlineSlice<'a> {
-		Self {
-			array: array,
-		}
+	pub fn array(array: &'a [u8]) -> Self {
+		CmdlineSlice(array)
 	}
 	
 	#[inline]
 	pub fn to_buf(&self) -> CmdlineBuf {
-		CmdlineBuf::array(self.array.to_vec())
+		CmdlineBuf::from(self.0)
 	}
 }
 
 impl<'a> Cmdline for CmdlineSlice<'a> {
 	#[inline]
 	fn iter<'i>(&'i mut self) -> CmdlineIter<'i> {
-		CmdlineIter::new(&mut self.array)
+		CmdlineIter::new(&mut self.0)
 	}
 	
 	#[inline]
 	fn iter_one<'i>(&'i mut self) -> CmdlineOneIter<'i> {
-		CmdlineOneIter::new(&mut self.array)
+		CmdlineOneIter::new(&mut self.0)
 	}
 	
 	#[inline]
 	fn iter_two<'i>(&'i mut self) -> CmdlineTwoIter<'i> {
-		CmdlineTwoIter::new(&mut self.array)
+		CmdlineTwoIter::new(&mut self.0)
 	}
 }
 
@@ -57,17 +53,16 @@ impl<'a> Deref for CmdlineSlice<'a> {
 impl<'a> AsRef<[u8]> for CmdlineSlice<'a> {
 	#[inline]
 	fn as_ref(&self) -> &[u8] {
-		self.array
+		self.0
 	}
 }
-
-
-impl<'a> Into<&'a [u8]> for CmdlineSlice<'a> {
+impl<'a> AsRef<CmdlineSlice<'a>> for CmdlineSlice<'a> {
 	#[inline]
-	fn into(self) -> &'a [u8] {
-		self.array
+	fn as_ref(&self) -> &CmdlineSlice<'a> {
+		self
 	}
 }
+
 
 impl<'a> From<&'a [u8]> for CmdlineSlice<'a> {
 	#[inline]
