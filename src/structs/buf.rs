@@ -94,3 +94,10 @@ impl<'a> From<CmdlineSlice<'a>> for CmdlineBuf {
 		slice.to_buf()
 	}
 }
+
+
+impl Into<Vec<u8>> for CmdlineBuf {
+	fn into(self) -> Vec<u8> {
+		self.0
+	}
+}

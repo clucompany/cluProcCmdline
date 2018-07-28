@@ -72,3 +72,8 @@ impl<'a> From<&'a [u8]> for CmdlineSlice<'a> {
 }
 
 
+impl<'a> Into<&'a [u8]> for CmdlineSlice<'a> {
+	fn into(self) -> &'a [u8] {
+		self.0
+	}
+}
